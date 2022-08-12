@@ -1,0 +1,14 @@
+[class="High"] { background-color:red;
+
+}
+
+[class="Medium"] { background-color: yellow;
+}
+
+[class="Low"] { background-color: green;
+
+}
+
+[class='completed']{
+    text-decoration: line-through;
+}

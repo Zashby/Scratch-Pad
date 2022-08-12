@@ -1,0 +1,35 @@
+{% extends 'todo/base.html' %}
+
+{% block title %}
+{{request.user.username}} | Todo App
+{% endblock title %}
+
+{% block content %}
+<h1>Create Todo</h1>
+<div>
+    {% include 'todo/_form.html' with path='todo:create' button_text='Create' %}
+</div>
+<div>
+    <h4>Current Todos</h4>
+    <div>
+        {% for todo in todos %}
+        <div>
+            <a href=" {% url 'todo:update' todo.id %}">{{todo.priority}} | {{todo.text}}</a>
+            <a href=" {% url 'todo:delete' todo.id %} ">Delete</a>
+        </div>
+        <br>
+        {% endfor %}
+    </div>
+
+    <h4>Completed</h4>
+    <div>
+        {% for todo in completed  %}
+        <div>
+            <p>{{todo.text}}</p>
+            <a href=" {% url 'todo:delete' todo.id %} ">Delete</a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content  %}

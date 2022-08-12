@@ -1,0 +1,20 @@
+ {% extends 'todo/base.html' %}
+
+
+ {% block title %}
+ {{todo}}
+
+ 
+ {% endblock title %}
+
+ {% block content %}
+
+ <form action="{% url 'todo:update' todo.id %}" method="POST">
+    {% csrf_token %}
+    {{form}}
+    <button>Update</button>
+</form>
+
+<a href=" {% url 'todo:complete' todo.id %} ">Complete Task</a>
+ {% endblock content %}
+

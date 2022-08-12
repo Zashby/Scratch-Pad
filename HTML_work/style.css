@@ -1,0 +1,36 @@
+
+/* This is a grandparent directory with assets usable by following sections */
+:root{
+    font-size: 10px;
+    /* variable example */
+    --color-link: pink
+
+
+}
+
+
+
+body {background-color: grey;
+        color: aliceblue;
+        font-size: 1.6rem;
+}
+
+h1{width:100%;
+    text-align:center;
+    margin-right:10px;
+    padding-bottom:20p;
+
+}
+
+h2{
+    margin-right: 20px;
+}
+
+/* rem measurement is based off :root font size. Functions as a multiplier */
+
+a{
+    margin:2.5rem;
+    display: block;
+    color:var(--color-link);
+    max-width: 40ch;
+}

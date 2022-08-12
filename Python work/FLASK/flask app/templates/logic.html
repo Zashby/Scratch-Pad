@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logic Business</title>
+</head>
+<body>
+    <!-- For loops -->
+    <h1>Welcome to where the logic is stored!</h1>
+    <ul>
+        {% for fruit in fruits %}
+        <li>{{fruit}}</li>
+        {% endfor %}
+    </ul>
+    {% for user in users %}
+</br>
+    <div class="user">
+        <h2>{{user.name}}</h2>
+        <p>age: {{user.age}}</p>
+        <p style=>Favorite color: {{user.color}}</p>
+    </div>
+    {% endfor %}
+
+</br>
+<!-- if statement -->
+{% if temp > 90 %}
+<p>it is too hot!</p>
+{% elif temp >80 %}
+<p>It is kinda warm...</p>
+{% else %}
+<p>It is alright outside.</p>
+{% endif %}
+
+</body>
+</html>

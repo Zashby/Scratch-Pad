@@ -1,0 +1,53 @@
+Virtual environment
+
+Building virtual environment
+
+python -m virtualenv venv
+
+venv/scripts/activate
+
+pip install django
+
+start new vs code window in project:
+code .
+
+Starting a django project
+'.' designates working directory
+django-admin startproject {name} .
+
+to run server
+python manage.py runserver
+
+Create a new app
+python manage.py startapp {appname}
+
+
+Save requirements folder:
+
+pip freeze > requirements.txt
+
+********insert app into settings (applications)******
+define functions in views.py
+define pathways with urls.py
+
+
+from django.http import HttpResponse
+
+
+Make HTML files inside of {app name}\templates\{app name}
+
+-
+apply migrations upon virtual environment creation
+	python manage.py migrate
+
+-
+
+---create new model in models.py---
+make ya class {name}(models.Model):
+	python manage.py makemigrations
+Moves new models to sqldblite3
+	python manage.py migrate
+---Go to admin.py file---
+from .models import {name}
+
+admin.site.register({name})

@@ -1,0 +1,8 @@
+
+
+<form action="{% url path %} " method="POST">
+    {% csrf_token %}
+
+    {{form}}
+    <button>{{button_text}}</button>
+</form>

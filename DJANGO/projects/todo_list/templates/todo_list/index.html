@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Maker</title>
+    <style>
+        .low{
+            background-color:green;
+        }
+        
+        .medium{ background-color:orange;
+         }
+        
+        .high{ background-color:red; 
+        }
+        
+        .complete{ background-color:grey;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello there! Time to make a todo list </h1>
+
+    <form action="" method = "POST">
+        {% csrf_token %}
+        {{form}}
+        <button>submit</button>
+    </form>
+
+<h2>Todo List:</h2>
+<ul>
+{% for todo in todos%}
+<div>
+
+
+    <li class=' {% if todo.complete%}complete {% endif%} {{todo.priority}}' >{{todo.todo_item}}</li> 
+    <a href="complete/{{forloop.counter0}}">Complete</a> 
+    <a href="delete/{{forloop.counter0}}">Delete</a>
+    </div>
+
+
+{% empty %}
+<li>No todos</li>
+{% endfor %}
+</ul>
+
+</body>
+</html>

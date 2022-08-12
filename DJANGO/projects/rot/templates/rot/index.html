@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rot</title>
+</head>
+<body>
+    <h1>ROT Cipher</h1>
+    <form action="" method="post"  >
+        {% csrf_token %}
+        <input type="text" name="message" placeholder="Enter Message">
+        <input type="number" name="rotations" min='1' max='26' step ='1' value="13">
+        <button>Submit</button>
+    </form>
+
+    <p>{{encoded}}</p>
+    
+    </body>
+</html>

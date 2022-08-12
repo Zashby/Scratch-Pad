@@ -1,0 +1,50 @@
+nav{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ghetto ass centering */
+/* h1{
+    position:absolute;
+    left:50%;
+    transform: translateX(-50%s);
+} */
+
+.titlespacer{
+    width:25ch;
+}
+
+.wrapper{
+    padding: 20px;
+    height:500px;
+    background-color: darkgrey;
+    /* initiate the flex */
+    display: flex;
+    /* spacing between items */
+    justify-content: space-evenly;
+    /* self explanatory */
+    align-content: center;
+    /* row or column (affects other properties accordingly */
+    flex-direction: row;
+    /* aligns items in the thing */
+    align-items: center;
+    /* wrap around instead of smooshing stuff together */
+    flex-wrap: wrap;
+}
+
+.box{
+    height:150px;
+    width:150px;
+    background-color: cornflowerblue;
+    border: 5px solid white;
+    border-radius: 5px;
+
+
+    /* center box text */
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+
+}

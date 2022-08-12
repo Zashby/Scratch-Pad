@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends</title>
+    <link rel="stylesheet" href="{% static 'people/styles.css' %}">
+    
+</head>
+<body>
+    <form action="{% url 'index' %}" method="POST">
+        {% csrf_token %}
+        
+        <input type="text" name="first_name" placeholder="First name">
+        <input type="text" name="last_name" placeholder="Last name">
+        <input type="number" name="age" placeholder="Age" >
+        <input type="checkbox" name="besties" >
+        <select name="state" >
+            {% for state in states %}
+                <option value="{{state.id}}">{{state.name}}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="">Besties?</label>
+        <button>Add</button>
+
+    </form>
+    <br>
+
+    
+    {% for person in people %}
+    <a href="{% url 'person_details' person.id %}" >{{person.first_name}} {{person.last_name|default_if_none:''}}</a>
+    <br>
+    {% endfor %}
+
+
+    
+</body>
+</html>

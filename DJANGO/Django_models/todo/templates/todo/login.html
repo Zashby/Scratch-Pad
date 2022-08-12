@@ -1,0 +1,13 @@
+{% extends 'todo/base.html' %}
+
+{% block title %}
+Login
+{% endblock title %}
+
+{% block content %}
+<h1>Login</h1>
+<h3>Enter username and password before clicking "login"</h3>
+{% include 'todo/_form.html' with path='todo:login' button_text='Login'%}
+
+{% endblock content %}
+

@@ -1,0 +1,14 @@
+{% extends 'todo/base.html' %}
+
+{% block title %}
+Signup
+
+{% endblock title %}
+
+{% block content %} 
+<h1>signup</h1>
+<p>{{request.user.username}}</p>
+{% include 'todo/_form.html' with path='todo:signup' button_text='signup'%}
+
+
+{% endblock %}
