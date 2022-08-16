@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List</title>
+    <link rel="stylesheet" href="./styles.css">
     <script defer src="./todo.js"></script>
 </head>
 <body>
@@ -12,15 +13,22 @@
     <div>
         <h1>Todo List Manager</h1>
     </div>
-    <div>
+    <div class="input-container">
         <input type="text" id="new-todo" placeholder="Enter your new Todo">
         <button id="create-new-todo">Create</button>
     </div>
     <div>
         <h2>Todos:</h2>
+        <div id="todo-container">
+            <p>Finish completion button</p>
+            <p>Finish Delete button</p>
+
+        </div>
     </div>
     <div>
-        <h2></h2>
+        <h2>Completed:</h2>
+        <div id="completed-container">
+        </div>
     </div>
 </body>
 </html>
