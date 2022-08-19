@@ -1,0 +1,108 @@
+body{
+    background-color: #457b9d;
+}
+
+#location-bar{
+    color: #f1faee;
+}
+
+h1,h2,h3,h4,h5,h6{
+    text-align: center;
+    color: #a8dadc;
+}
+
+.input{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#location-bar{
+
+    background-color:#e63946;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+#weather-container{
+    visibility:hidden;
+    width:90vw;
+    margin: 0 auto;
+    
+    display: grid;
+    grid-template-areas:
+    'date date date'
+    'location temp forecast';
+    gap: 5px;
+    padding: 5px;
+    background-color: rgb(156, 152, 152);
+    border-radius: 5px;
+}
+
+#weather-container > div{
+    background-color:#8ecae6;
+    border-radius: 5px;
+}
+
+.date-container{
+    grid-area: date;
+    text-align: center;
+    align-self: center;
+}
+
+.date-contents{
+    color:#1d3557;
+}
+
+.location-container{
+    grid-area: location;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.location-container > div{
+    text-align:center;
+    padding: 5px 5px;
+    background-color:#bde0fe;
+    border-radius:5px;
+}
+
+.temp-container{
+    display:flex;
+    flex-direction:row;
+    gap: 2px;
+    grid-area: temp;
+    justify-content:space-evenly
+
+}
+.temp-container > div{
+    text-align: center;
+    background-color:#bde0fe;
+    border-radius:5px;
+}
+
+.forecast-container{
+    grid-area:forecast;
+    display:flex;
+    text-align:center;
+    justify-content: space-evenly;
+    padding:0 10px;
+    
+}
+
+.forecast{
+    align-self: center;
+    color:#1d3557;
+    
+}
+
+.owf{
+    align-self: center;
+    color: #1d3557;
+    
+}
+
+.data-text{
+    color:#1d3557;
+}
