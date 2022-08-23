@@ -5,3 +5,8 @@ body{
 }
 
 /* #FCF7F8 snow - #A31621 red - #90C2E7 cerulean */
+
+
+.completed{
+    text-decoration:line-through
+}
