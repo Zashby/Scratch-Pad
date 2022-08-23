@@ -1,0 +1,46 @@
+body{
+    background-color: #1E293B;
+    color:cadetblue; 
+}
+
+.header{
+    text-align: center;
+}
+
+#score{
+    display: flex;
+    justify-content: center;
+}
+
+#word-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#snowman-input-container{
+    display: flex;
+    justify-content: space-evenly;
+    gap:1rem;
+    flex-wrap: wrap;
+    
+}
+
+#new-game{
+    display:flex;
+    justify-content: center;
+    visibility:hidden;
+}
+
+#full-guess-container{
+    margin:0 auto;
+    width: 20%;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+.letter-button{
+    padding: 20px 32px;
+}
