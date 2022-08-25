@@ -62,3 +62,5 @@ for commands
 management/commands/{commandname.py}
 
 from django.core.management.base import BaseCommand
+
+Django shell

@@ -4,9 +4,86 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Maps wow</title>
+    
+    <!-- Leaflet map setup -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+
+    <style>
+        body{
+            height: 100vw;
+        }
+        #map{
+            width: 65%; height: 40%;
+            margin: 0 auto;
+
+        }
+    </style>
+
+        
+
 </head>
 <body>
+    
+    
     <h1>Hello world</h1>
+    
+    <select name="" id="group-selector">
+        <option value="">Select a Group</option>
+    </select>
+<br>
+    <div id="map"></div>
+<br>
+    <script>
+
+        
+        var map = L.map('map').setView([51.505, -0.09], 13);
+    
+        var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+
+     
+        fetch('api/groups').then(response => response.json()).then(data => {
+            for(group of data.data){
+            let option = document.createElement('option');
+            option.value = group.id;
+            option.text = group.name;
+            document.querySelector('#group-selector').append(option)
+        }
+        })
+
+        document.querySelector('#group-selector').addEventListener('change', function(event){
+            const id = Number(event.target.value)
+            if(!id) {return};
+            fetch(`api/groups/${id}`).then(response => response.json()).then(data => applyGroupUser(data.data))
+        })
+
+        function applyGroupUser(data){
+            
+            let markerLayer = L.layerGroup();
+        for(user of data){
+            
+            var marker = L.marker([user.location__latitude, user.location__longitude]).addTo(map)
+		    .bindPopup('<b>Hello world!</b><br />I am a popup.').openPopup();
+        }}
+        
+
+
+        fetch('/api/userspublic').then(response => response.json()).then(data => applyUser(data))
+
+        function applyUser(data){
+        for(user of data){
+
+            var marker = L.marker([user.location.latitude, user.location.longitude]).addTo(map)
+		    .bindPopup('<b>Hello world!</b><br />I am a popup.').openPopup();
+        
+        }}
+
+    </script>
+
+    
 </body>
 </html>
