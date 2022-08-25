@@ -51,3 +51,14 @@ Moves new models to sqldblite3
 from .models import {name}
 
 admin.site.register({name})
+
+
+add onto Django user model
+
+from django.contrib.auth.models import AbstractUser
+class User(AbstractUser):
+
+for commands
+management/commands/{commandname.py}
+
+from django.core.management.base import BaseCommand

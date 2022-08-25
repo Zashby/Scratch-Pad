@@ -1,2 +1,10 @@
 # python files
 scratch_pad.py
+
+
+# environments
+
+.env
+.venv   
+env/
+venv/
