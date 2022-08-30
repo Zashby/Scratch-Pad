@@ -17,7 +17,7 @@ class Command(BaseCommand):
 
         print('Creating test users')
         groups=[]
-        for x in range(5):
+        for x in range(10):
             if x%2==0:
                 group = Group()
                 group.name= f'testgroup{x}'
@@ -32,7 +32,7 @@ class Command(BaseCommand):
 
 
 
-        for x in range(20):
+        for x in range(200):
             print(f'creating test user {x}')
             location = Location()
             location.latitude = round(random.randrange(-9000000,9000000)/100000, 5)
@@ -44,7 +44,7 @@ class Command(BaseCommand):
                     private = False,
                     location= location)
             u.groups.add(random.choice(groups))
-            if x%random.randint(1,19)==0:
+            if x%random.randint(1,10)==0:
                 u.private = True
                 print(f'created user {x} is private')
                 u.groups.add(random.choice(groups))

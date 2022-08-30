@@ -1,7 +1,9 @@
 from itertools import filterfalse
+import json
 from django.http import HttpResponse, JsonResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import User, Group
+from django.contrib import auth
 
 # Create your views here.
 def index(request):
@@ -40,3 +42,28 @@ def get_group_id(request, group_id):
     users = list(group.users.filter(restricted=False, private=False).all().values('location__longitude', 'location__latitude', 'username'))
     return JsonResponse({'data':users})
     
+
+def login(request):
+    if request.method == 'GET':
+        return render(request, 'mapr_app/login.html')
+    elif request.method == 'POST':
+
+    
+        data = json.loads(request.body)
+        username = data.get['username', '']
+        password = data.get['password', '']
+        print(username, password)
+        user = auth.authenticate(request, username=username, password=password)
+        if user== None:
+            return JsonResponse({'Message':"Invalid username or password"})
+        else:
+            auth.login(request, user)
+            return JsonResponse({'message':'ok'})
+
+
+def get_test_groups(request):
+    print(request.user)
+    groups=list(Group.objects.filter(users__username=request.user.username))
+
+def vue_index(request):
+    return render(request, 'mapr_app/vue.html')
