@@ -10,9 +10,11 @@ const csrfToken = Cookies.get('csrftoken')
 
 loginForm.addEventListener('submit', function(event){
     event.preventDefault();
+
     const data = {
         username: username.value, 
         password: password.value, }
+
     fetch('', {
         method: "POST",
         body : JSON.stringify(data),
@@ -20,9 +22,11 @@ loginForm.addEventListener('submit', function(event){
         headers: {
             'X-CSRFToken':csrfToken
         } 
-        }).then(response => response.json()).then(data => function(){if(data.message !== 'ok'){
+        }).then(response => response.json()).then(data => {if(data.message !== 'ok'){
             console.error(data.message)
         } else {
             window.location = '../'
         }
-        })})
+        })
+    
+    })

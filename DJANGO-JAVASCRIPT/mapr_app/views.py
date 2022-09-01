@@ -50,18 +50,18 @@ def login(request):
 
     
         data = json.loads(request.body)
-        username = data.get['username', '']
-        password = data.get['password', '']
-        print(username, password)
+        username = data.get('username', '')
+        password = data.get('password', '')
+        
         user = auth.authenticate(request, username=username, password=password)
-        if user== None:
+        if user == None:
             return JsonResponse({'Message':"Invalid username or password"})
         else:
             auth.login(request, user)
             return JsonResponse({'message':'ok'})
 
 
-def get_test_groups(request):
+def get_groups(request):
     print(request.user)
     groups=list(Group.objects.filter(users__username=request.user.username))
 

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{pokemon.number}} | {{pokemon.name}}</title>
+    <style>
+        body{
+            height: 100vw;
+        }
+        .container{
+            width: 60%;
+            margin: 0 auto;
+            align-self: center;
+            justify-content: center;
+
+        }
+        h1,h4, p{
+            text-align: center;
+        }
+        .image{
+            margin: 0 auto;
+            display:flex;
+            justify-content: center;
+        }
+        .statistics{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 2rem
+
+        }
+        .types{
+            width:20%;
+            margin: 0 auto;
+            display:flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <a href="{% url 'pokeapp:index' %}">&larr; Return to home</a>
+    <div class="container">
+        <h1>{{pokemon.name}}</h1>
+        <h4>Number: {{pokemon.number}}</h4>
+        <div class="image">
+            <img src="{{pokemon.image_front}}" alt="{{pokemon.name}} from the front"> <img src="{{pokemon.image_back}}" alt="{{pokemon.name}} from behind">
+        </div>
+        <div class="statistics">
+            <p>Height: {{pokemon.height}} m</p> <p>Weight: {{pokemon.weight}} Kg</p>
+        </div>
+        <h4>Types:</h4>
+        <div class="types">
+            {% for type in types %}
+            <p>{{type.name}}</p>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
+
+<!-- number = models.IntegerField()
+name = models.CharField(max_length=30)
+height = models.FloatField()
+weight = models.FloatField()
+image_front = models.CharField(max_length=150)
+image_back = models.CharField(max_length=150)
+types = models.CharField(max_length=50) -->

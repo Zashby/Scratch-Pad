@@ -15,6 +15,7 @@ class Command(BaseCommand):
         User.objects.filter(is_superuser=False).delete()
         print('Database cleared... repopulating')
 
+
         print('Creating test users')
         groups=[]
         for x in range(10):

@@ -68,7 +68,7 @@ def main():
     # pull_list = requests.get('https://www.themealdb.com/api/json/v1/1/list.php?a=list').json()['meals']
     # area_list = [x["strArea"] for x in pull_list]
     # type_list = [x for x in random.choice()]
-    with open("chef_text.txt", "r") as f:
+    with open(".chef_text.txt", "w") as f:
         read_file = f.read()
     week_meals = ast.literal_eval(read_file)
     while True:
@@ -117,7 +117,7 @@ def main():
                         pass
             pause = input("Press enter to continue.")
         if cook_choice == 5:
-            with open("chef_text.txt", "w") as f:
+            with open("./chef_text.txt", "w+") as f:
                 f.write(str(week_meals))
             print("See you next time chef!")
             break
