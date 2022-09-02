@@ -29,7 +29,7 @@
         </div>
         <br>
         <div class="pokedex">
-            <div v-for='poke in pokemon' class="card">
+            <div v-for='poke in pokemonDisplay' class="card">
                 <a v-bind:href="'pokecheck/'+ poke.number"> <img v-bind:src=poke.image_front> </a>
                 <div class="container" style="text-align:center">
                 <h3><b>--poke.name--</b></h4>
@@ -39,12 +39,17 @@
                 </div>
             </div>
           </div>
-          <div class="page-bar">
-            <button class='page-button' v-on:click="searchPokemon">1</button>
-
-          </div>
+          <br>
+          
 
         </div>
+        <br>
+          <div class="page-bar">
+            <button v-for="x in Math.floor(pokemon.length/25)" class='page-button' v-bind:value='x' v-on:click="pokePage">--x--</button>
+
+          </div>
+          <br>
     </div>
+    <br>
 </body>
 </html>

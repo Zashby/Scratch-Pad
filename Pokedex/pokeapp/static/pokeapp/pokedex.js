@@ -6,7 +6,8 @@ const app = Vue.createApp({
             test : 'test success',
             pokemon : [],
             pokeSearch: null,
-            csrfToken : document.getElementsByName('csrfmiddlewaretoken')
+            csrfToken : document.getElementsByName('csrfmiddlewaretoken'),
+            pokemonDisplay: []
             
             
         }
@@ -14,25 +15,34 @@ const app = Vue.createApp({
     methods: {
         searchPokemon: function(){
             fetch(`/api/pokesearch/${this.pokeSearch}`).then(res => res.json()).then(data=> {
-                this.pokemon = data;
+                this.pokemonDisplay = data;
             })
 
         },
-        pokeSay : function(){
-            console.log('hello');
-        }
+        pokePage : function(x){
+            let check = Number(x.target.value);
+
+            if(check === 1){
+                this.pokemonDisplay= this.pokemon.slice(0,25);
+            } else{
+                this.pokemonDisplay = this.pokemon.slice(25*check,25*(check+1))
+            }
+
+            
+            }
+            
+        
     },
     
 
     created: function(){
         fetch('/api/pokemonlist')
         .then(res => res.json())
-        .then(data => {this.pokemon = data})
+        .then(data => {this.pokemon = data, this.pokemonDisplay = data.slice(0,25)})
         
     }, 
     mounted: function(){
             if( this.csrfToken){
-                console.log(this.csrfToken)
             } else{
                 console.log('no token')
             }
