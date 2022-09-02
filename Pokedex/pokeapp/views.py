@@ -2,6 +2,7 @@ from unicodedata import name
 from django.shortcuts import render, redirect
 from .models import Pokemon, manyTypes
 from django.http import HttpResponse, JsonResponse
+from django.db.models import Q
 
 # Create your views here.
 def index(request):
@@ -44,7 +45,7 @@ def pokecheck(request, pokemon_number):
 def pokesearch(request, search_term):
     pokemon_api= []
     if request.method == 'GET':
-        pokemon = Pokemon.objects.filter(name__icontains=search_term)
+        pokemon = Pokemon.objects.filter(Q(types__icontains=search_term) | Q(name__icontains=search_term) | Q(number__icontains=search_term))
         for poke in pokemon:
             pokemon_api.append({
             'number' : poke.number,

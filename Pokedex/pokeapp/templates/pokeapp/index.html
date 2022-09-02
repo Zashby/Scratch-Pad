@@ -5,64 +5,29 @@
     <script src="https://unpkg.com/vue@3"></script>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js" integrity="sha512-wT7uPE7tOP6w4o28u1DN775jYjHQApdBnib5Pho4RB0Pgd9y7eSkAV1BTqQydupYDB9GBhTcQQzyNMPMV3cAew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+    <link href="http://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'pokeapp/styles.css' %}">
     <script defer src="{% static 'pokeapp/pokedex.js' %}"></script>
     <title>Pokedex</title>
     <style>
 
-        body{
-            height:100vw;
-        }
-        .header{
-            text-align: center;
-        }
-        #app{
-            height: 100%;
-        }
-        .pokedex{
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .card {
-            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-            transition: 0.3s;
-            width: 20%;
-            align-content: center;
-        }
-        .card:hover {
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-        }
-        .container {
-            padding: 2px 16px;
-        }
-        img{
-            width:60%;
-             margin: 0 auto; 
-             display:flex; 
-             justify-content: center;
-        }
-        .types{
-            display:flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            justify-content: space-evenly;
-        }
-        .types > p{
-            display:flex
-        }
+        
+        
     </style>
 </head>
 <body>
     <h1 class="header">Hello! Welcome to the Pokedex!</h1>
     <hr>
     <div id="app" >
+        <div class="search-container">
         {% csrf_token %}
-        <input v-on:keypress.enter="searchPokemon" type="text" v-model="pokeSearch" placeholder="Enter pokemon search here...">
-        <button v-on:click="searchPokemon">search</button>
-       
+            <input v-on:keypress.enter="searchPokemon" type="text" v-model="pokeSearch" placeholder="Enter pokemon search here...">
+            <button v-on:click="searchPokemon">search</button>
+        </div>
+        <br>
         <div class="pokedex">
             <div v-for='poke in pokemon' class="card">
                 <a v-bind:href="'pokecheck/'+ poke.number"> <img v-bind:src=poke.image_front> </a>

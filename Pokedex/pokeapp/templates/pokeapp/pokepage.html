@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,45 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{pokemon.number}} | {{pokemon.name}}</title>
-    <style>
-        body{
-            height: 100vw;
-        }
-        .container{
-            width: 60%;
-            margin: 0 auto;
-            align-self: center;
-            justify-content: center;
-
-        }
-        h1,h4, p{
-            text-align: center;
-        }
-        .image{
-            margin: 0 auto;
-            display:flex;
-            justify-content: center;
-        }
-        .statistics{
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            gap: 2rem
-
-        }
-        .types{
-            width:20%;
-            margin: 0 auto;
-            display:flex;
-            flex-direction: row;
-            justify-content: space-between;
-        }
-    </style>
+    <link rel="stylesheet" href="{% static 'pokeapp/detail.css' %}">
 </head>
 <body>
-    <a href="{% url 'pokeapp:index' %}">&larr; Return to home</a>
+    <a href="{% url 'pokeapp:index' %}"><h2>&larr; Return to home</h2></a>
     <div class="container">
-        <h1>{{pokemon.name}}</h1>
+        <h1 class="header">{{pokemon.name}}</h1>
         <h4>Number: {{pokemon.number}}</h4>
         <div class="image">
             <img src="{{pokemon.image_front}}" alt="{{pokemon.name}} from the front"> <img src="{{pokemon.image_back}}" alt="{{pokemon.name}} from behind">
