@@ -17,11 +17,12 @@ const app = Vue.createApp({
                 this.pokemon = data;
             })
 
-                }
+        },
+        pokeSay : function(){
+            console.log('hello');
+        }
     },
-    watch: function(pokemon){
-        this.$forceUpdate();
-    },
+    
 
     created: function(){
         fetch('/api/pokemonlist')
@@ -35,5 +36,8 @@ const app = Vue.createApp({
             } else{
                 console.log('no token')
             }
+        },
+    watch: function(pokemon){
+            this.$forceUpdate();
         }
 }).mount('#app')

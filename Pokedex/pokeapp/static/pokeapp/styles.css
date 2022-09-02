@@ -1,20 +1,29 @@
 @import url(https://fonts.googleapis.com/css?family=Sigmar+One);
 
 
+@import url(https://fonts.googleapis.com/css?family=Sigmar+One);
+
+
 body{
     height:100vw;
     background-color: #31525B;
-    color: #12232E;
+    color: #e1b382;
     
 }
 input{
     background-color: #B3DEE5;
+    color: #12232E;
+    font-family: 'sigmar one'
+}
+::placeholder{
+    color:#31525B
 }
 button{
     background-color: #EA8A81
 }
 h1,h2,h3,h4,h5,h6,p {
-    font-family: 'sigmar one'
+    font-family: 'sigmar one';
+    color: #e1b382;
 }
 .header{
     text-align: center;
@@ -60,4 +69,10 @@ img{
 }
 .types > p{
     display:flex
+}
+hr{
+    color: #2a75bb;
+    background-color: #2a75bb;
+    border-color: #2a75bb;
+    height:1px;
 }
