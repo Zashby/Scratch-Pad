@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bored\\Documents\\Coding class\\C#\\c#.csproj": {}
+    "C:\\Users\\bored\\Downloads\\Coding\\private\\C#\\c#.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bored\\Documents\\Coding class\\C#\\c#.csproj": {
+    "C:\\Users\\bored\\Downloads\\Coding\\private\\C#\\c#.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bored\\Documents\\Coding class\\C#\\c#.csproj",
+        "projectUniqueName": "C:\\Users\\bored\\Downloads\\Coding\\private\\C#\\c#.csproj",
         "projectName": "c#",
-        "projectPath": "C:\\Users\\bored\\Documents\\Coding class\\C#\\c#.csproj",
+        "projectPath": "C:\\Users\\bored\\Downloads\\Coding\\private\\C#\\c#.csproj",
         "packagesPath": "C:\\Users\\bored\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bored\\Documents\\Coding class\\C#\\obj\\",
+        "outputPath": "C:\\Users\\bored\\Downloads\\Coding\\private\\C#\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bored\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -43,7 +43,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -52,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
