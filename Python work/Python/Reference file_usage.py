@@ -34,7 +34,7 @@ def edit_file_csv(file_path):
     with open(file_path) as file:
         print("Opened file")
         file = file.read()
-        words = file.split(",")
+        
     print("Closed file")
     
     words.pop(4)    

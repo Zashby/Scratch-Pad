@@ -37,3 +37,35 @@ def snail(snail_map):
                 array.append(snail_map[x].pop(0))
         
     return array
+
+
+def dataSetEdit(file_path, *args):
+    with open(file_path) as file:
+        read=file.read()
+        words = read.split(",")
+        for i ,word in enumerate(words):
+            for arg in args:
+                if arg in word:
+                    words[i]=word.replace(arg, "")
+        read = ",".join(words)
+
+    with open(file_path,'w') as file:
+        file.write(read)
+
+
+
+            # if arg in word:
+            #     words[i]=word[:word.index(arg)]
+
+def pangramCheck(str):
+    str=str.lower()
+    check = list(string.ascii_lowercase)
+    for x in str:
+        if x in check:
+            check.pop(check.index(x))
+    if not check:
+        return 'pangram'
+    else:
+        return 'not pangram'
+    
+    
