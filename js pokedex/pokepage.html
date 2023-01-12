@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{pokemon.number}} | {{pokemon.name}}</title>
+    <link rel="stylesheet" href="{% static 'pokeapp/detail.css' %}">
+</head>
+<body>
+    <a href="{% url 'pokeapp:index' %}"><h2>&larr; Return to home</h2></a>
+    <div class="container">
+        <h1 class="header">{{pokemon.name}}</h1>
+        <h4>Number: {{pokemon.number}}</h4>
+        <div class="image">
+            <img src="{{pokemon.image_front}}" alt="{{pokemon.name}} from the front"> <img src="{{pokemon.image_back}}" alt="{{pokemon.name}} from behind">
+        </div>
+        <div class="statistics">
+            <p>Height: {{pokemon.height}} m</p> <p>Weight: {{pokemon.weight}} Kg</p>
+        </div>
+        <h4>Types:</h4>
+        <div class="types">
+            {% for type in types %}
+            <p>{{type.name}}</p>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
+
+<!-- number = models.IntegerField()
+name = models.CharField(max_length=30)
+height = models.FloatField()
+weight = models.FloatField()
+image_front = models.CharField(max_length=150)
+image_back = models.CharField(max_length=150)
+types = models.CharField(max_length=50) -->

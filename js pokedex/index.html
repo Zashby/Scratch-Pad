@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://unpkg.com/vue@3"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js" integrity="sha512-wT7uPE7tOP6w4o28u1DN775jYjHQApdBnib5Pho4RB0Pgd9y7eSkAV1BTqQydupYDB9GBhTcQQzyNMPMV3cAew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="http://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <script defer src="./pokedex.js"></script>
+    <title>Pokedex</title>
+    <style>
+
+        
+        
+    </style>
+</head>
+<body>
+    <h1 class="header">Hello! Welcome to the Pokedex!</h1>
+    <hr>
+    <div id="app" >
+        <div class="search-container">
+        
+            <input v-on:keypress.enter="searchPokemon" type="text" v-model="pokeSearch" placeholder="Enter pokemon search here...">
+            <button v-on:click="searchPokemon">search</button>
+        </div>
+        <br>
+        <div class="pokedex">
+            <div v-for='poke in pokemonDisplay' class="card">
+                <a v-bind:href="'https://pokemon.fandom.com/wiki/'+ poke.name"> <img v-bind:src="'https://github.com/msikma/pokesprite/blob/master/pokemon-gen8/regular/'+poke.name+'.png'"> </a>
+                <div class="container" style="text-align:center">
+                <h3><b>--poke.name--</b></h4>
+                
+                <div class="types" >
+                    <p v-for="type in poke.many_types">--type.name--</p>
+                </div>
+            </div>
+          </div>
+          <br>
+          
+
+        </div>
+        <br>
+          <div class="page-bar">
+            <button v-for="x in Math.floor(pokemon.length/25)" class='page-button' v-bind:value='x' v-on:click="pokePage">--x--</button>
+
+          </div>
+          <br>
+    </div>
+    <br>
+</body>
+</html>
