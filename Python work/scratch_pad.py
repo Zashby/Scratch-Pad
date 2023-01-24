@@ -1,32 +1,17 @@
-def findZigZagSequence(a, n):
-    a.sort()
-    mid = int((n + 1)/2)-1
-    a[mid], a[n-1] = a[n-1], a[mid]
+x=int(input())
+y=int(input())
 
-    st = mid + 1
-    ed = mid +2
-    while(st <= ed) and (ed < n-1):
-        a[st], a[ed] = a[ed], a[st]
-        st = st + 1
-        ed = ed + 1
+x=x%y
+print(x,y)
 
-    for i in range (n):
-        if i == n-1:
-            print(a[i])
-        else:
-            print(a[i], end = ' ')
-    return
+x=x%y
+print(x,y)
+y=y%x
 
-def findLeastNumOfUniqueInts(arr, k) -> int:
-        while k:
-            for i, x  in enumerate(arr):
-                if arr.count(x)<=i:
-                    print(i)
-                    arr.remove(x)
-                    k-=1
-        end=list()
-        end =[x for x in arr if end.count(x)==0]  
-        print(end)    
-        return len(end)
+print(y)
 
-print(findLeastNumOfUniqueInts([4,3,1,1,3,3,2], 3))
+print(2+3*5)
+print(20.12E8)
+print(1/1)
+print(1/2+3//3+4**2)
+print(2%012)
