@@ -28,11 +28,12 @@ class   Pringlechain(object):
             print("\n---------------\n")
 
             # checks if hash of block is correct
+            last_block_hash = self.hash(last_block)
             if block['previous_hash'] != self.hash(last_block):
                 return False
             
             # checks PoW
-            if not self.valid_proof(last_block['proof'], block['proof']):
+            if not self.valid_proof(last_block['proof'], block['proof'] ):
                 return False
             
             last_block=block
@@ -211,8 +212,7 @@ def full_chain():
     }
     return jsonify(response), 200
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+
 
 
 @app.route('/nodes/register', methods=['POST'])
@@ -256,3 +256,5 @@ def consensus():
 
     return jsonify(response), 200
 
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
