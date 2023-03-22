@@ -3,16 +3,23 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Launch FibSequence2",
+            "name": "Car",
             "request": "launch",
-            "mainClass": "FibSequence2",
+            "mainClass": "Car",
             "projectName": "private_3ddbe80c"
         },
         {
             "type": "java",
-            "name": "Launch FibSequence",
+            "name": "Test",
             "request": "launch",
-            "mainClass": "FibSequence",
+            "mainClass": "Test",
+            "projectName": "private_3ddbe80c"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Main",
             "projectName": "private_3ddbe80c"
         },
         {
