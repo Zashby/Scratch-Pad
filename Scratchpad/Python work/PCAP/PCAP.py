@@ -1,4 +1,7 @@
 """Just labs I had to complete during PCAP, felt like a waste to delete them afterwards"""
+from string import ascii_lowercase, ascii_uppercase
+
+
 def is_year_leap(year):
 #
 # Your code from LAB 4.3.1.6.
@@ -119,3 +122,133 @@ print(mysplit("To be or not to be,that is the question"))
 print(mysplit("   "))
 print(mysplit(" abc "))
 print(mysplit(""))
+
+def ledNum(nums):
+    """Prints LED version of input integer numbers. I am too lazy to finish building the dictionary."""
+    nums=str(nums)
+    L = "#"
+    led = {
+        "1":[[' ',L],[' ',L],[' ',L],[' ',L],[' ',L]],
+        "2":[[L,L,L],[' ',' ',L],[L,L,L],[L,' ',' '],[L,L,L]]
+    }
+    for x in range(5):
+        for num in nums:
+            print(''.join(led[num][x]),end=" ")
+        print("")
+            
+            
+ledNum(21212122)
+
+
+
+def advancedROT():
+    shifted_text = ''
+    shift=0
+    text = input("Please enter the text you would like to encrypt: ")
+    while not shift:
+        try:
+            shift = int(input('Please enter a rotation value from 1 to 25: '))
+        except:
+            print("incorrect value, please try again.")
+        if shift > 25 or shift <= 0:
+            shift=0
+            print('Try again')
+    for letter in text: 
+        if letter in ascii_lowercase:
+            shifted_text += ascii_lowercase[(ascii_lowercase.find(letter)+shift)%26]
+        elif letter in ascii_uppercase:
+            shifted_text += ascii_uppercase[(ascii_uppercase.find(letter)+shift)%26] 
+        else: 
+            shifted_text += letter
+            
+    return shifted_text
+    
+    
+print(advancedROT())
+
+def recurveAdd(date):
+    sum=0
+    for x in date:
+        sum += int(x)
+    return str(sum)
+        
+    
+
+def digitOfLife():
+    date=""
+    numdate=0
+    
+    while not numdate:
+        try:
+            date=input("Please enter your date as numbers formatted as YYYYMMDD: ")
+            numdate = int(date)  
+        except:
+            print('That is an incorrect format, please try again.')
+            continue
+        if len(date) < 8:
+            numdate=0
+            print("I need the whole date please. Try again.")
+      
+    while len(date) >1 :
+        date = recurveAdd(date)
+    return date 
+     
+    
+print(digitOfLife())
+
+def stringFinder(word, string):
+    word=word.lower()
+    string=string.lower()
+    
+    check = sum([1 for x in word if x in string])
+    if len(word) == check:
+        return "Yes"
+    else:
+        return "No"
+    
+    
+
+print(stringFinder('donor',
+'Nabucodonosor'))
+
+
+print(stringFinder('donut',
+'Nabucodonosor'))
+
+def sudokuCheck(sudoku):
+    """ Takes a massive integer (81 digits) and returns if it is a winning sudoku game"""
+    check=[]
+    sudoku_list=[]
+    sudoku=list(str(sudoku))
+    # Array build
+    for x in range(9):
+        sudoku_list.append([sudoku[x] for x in range(9)])
+        if len(set(sudoku_list[x])) == 9:
+            del sudoku[0:9]
+        else:
+            return "no"
+    # vertical   
+    for x in range(9):
+        if len(set([sudoku_list[y][x] for y in range(9)])) == 9:
+            pass
+        else:
+            return "No"
+               
+    for y in range(0,7, 3):
+        for x in range(9):
+            first, second, third = sudoku_list[x][y:y+3]
+            check+= first, second, third
+            if len(check) == 9:
+                if len(set(check))==9:
+                    check=[]
+                else:
+                    return "No"
+    return "Yes"
+    
+    
+
+print(sudokuCheck(295743861431865927876192543387459216612387495549216738763524189928671354154938672))
+
+print(sudokuCheck(195743862431865927876192543387459216612387495549216738763524189928671354254938671))
+
+print(sudokuCheck(195741862431865927876192543387459216612387495549216738763524189928671354254938671))
