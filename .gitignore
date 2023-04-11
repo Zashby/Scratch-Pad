@@ -8,3 +8,9 @@ scratch_pad.py
 .venv   
 env/
 venv/
+
+
+# DataBases
+
+/pb_data
+pb_data
