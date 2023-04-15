@@ -14,3 +14,6 @@ venv/
 
 /pb_data
 pb_data
+pocketbase.exe
+backend/
+.backend
