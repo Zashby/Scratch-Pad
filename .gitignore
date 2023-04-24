@@ -9,6 +9,15 @@ scratch_pad.py
 env/
 venv/
 
+# IDE
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# dependencies
+/node_modules
 
 # DataBases
 
@@ -17,3 +26,7 @@ pb_data
 pocketbase.exe
 backend/
 .backend
+
+# Misc files
+chef_text.txt
+Project Plans.md
