@@ -1,4 +1,4 @@
-#Idea phase
+# Idea phase
 """
 API usage
 
@@ -30,9 +30,11 @@ create shopping list option w/ all required ingredients for week [ ]
 """
 
 
+
+
 import requests
 import ast
-
+import os
 def striplist(texts):
     from string import punctuation
     punc = list(punctuation) + [" ", "\n", "\r"]
@@ -40,33 +42,42 @@ def striplist(texts):
         texts = texts.replace(x, "")
     return texts
 
+
 def meal_prep_format():
-    intake = requests.get(f'https://www.themealdb.com/api/json/v1/1/random.php').json()['meals'][0]
-    intake = {key:value for key, value in intake.items() if (value != '' and value != ' ' and value != None)}
+    intake = requests.get(
+        f'https://www.themealdb.com/api/json/v1/1/random.php').json()['meals'][0]
+    intake = {key: value for key, value in intake.items() if (
+        value != '' and value != ' ' and value != None)}
 
     return intake
+
 
 def meal_prep_single_format(intake):
-    intake = {key:value for key, value in intake.items() if (value != '' and value != ' ' and value != None)}
+    intake = {key: value for key, value in intake.items() if (
+        value != '' and value != ' ' and value != None)}
 
     return intake
+
 
 def meal_prep(meal):
     print(f"\nLets cook some {meal['strMeal']}\n")
-    
+
     print("Here are the ingredients you will need!")
-    for x in range(1,20):
+    for x in range(1, 20):
         try:
-            print (meal.get(f"strIngredient{x}") + " " + meal.get(f"strMeasure{x}"))
+            print(meal.get(f"strIngredient{x}") +
+                  " " + meal.get(f"strMeasure{x}"))
         except TypeError:
             pass
     pause = input("press enter to continue.")
     print("Here are your handy instructions: \n")
-    print(meal["strInstructions"] )
+    print(meal["strInstructions"])
     pause = input("press enter to go back to the main menu chef.")
 
+
 def main():
-    iter_list = ['monday','tuesday','wednesday','thursday','friday','saturday','sunday']
+    iter_list = ['monday', 'tuesday', 'wednesday',
+                 'thursday', 'friday', 'saturday', 'sunday']
     week_meals = {}
 
     # Maybe code for later
@@ -74,13 +85,15 @@ def main():
     # area_list = [x["strArea"] for x in pull_list]
     # type_list = [x for x in random.choice()]
     try:
-        with open("chef_text.txt", "r+") as f:
+        directory_path = os.path.dirname(os.path.realpath(__file__))
+        file_path = os.path.join(directory_path, "chef_text.txt")
+        with open(file_path, "r+") as f:
             read_file = f.read()
         week_meals = ast.literal_eval(read_file)
     except:
         pass
     while True:
-    
+
         print(f"""
         Hello! Trying to cook more? Let me help you!
         Please pick one of the following options:
@@ -97,76 +110,74 @@ def main():
         except (TypeError, ValueError):
             print("I am afraid I do not understand chef... let's try again")
             continue
-        
-        
-        
+
         if cook_choice == 1:
             print("\n")
-            if len(week_meals)>0:
+            if len(week_meals) > 0:
                 for iter in iter_list:
                     print(iter + " " + week_meals[iter]['strMeal'])
                 pause = input("Press enter to continue.")
             else:
                 print("Nothing on the books this week chef.")
-   
-        
-        
+
         if cook_choice == 2:
             for iter in iter_list:
                 week_meals[iter] = meal_prep_format()
-        
-        
-        
+
         if cook_choice == 3:
-            day = input("Okie dokie chef! Please tell me what day it is: ").lower()
+            day = input(
+                "Okie dokie chef! Please tell me what day it is: ").lower()
             if day in week_meals.keys():
                 print("Alrighty, here we are!")
                 meal_prep(week_meals[day])
-            else: 
+            else:
                 print("I am afraid I do not have that on the books chef.\n")
-        
-        
-        
+
         if cook_choice == 4:
             print("\nHere are your ingredients for the week chef!\n")
             for key in week_meals.keys():
-                for x in range(1,20):
+                for x in range(1, 20):
                     try:
-                        print (week_meals[key].get(f"strIngredient{x}") + " " + week_meals[key].get(f"strMeasure{x}"))
+                        print(week_meals[key].get(
+                            f"strIngredient{x}") + " " + week_meals[key].get(f"strMeasure{x}"))
                     except TypeError:
                         pass
             pause = input("Press enter to continue.")
 
         if cook_choice == 5:
             print("\nPlease pick a category for your meal chef.\n")
-            categories = requests.get("https://www.themealdb.com/api/json/v1/1/list.php?c=list").json()['meals']
+            categories = requests.get(
+                "https://www.themealdb.com/api/json/v1/1/list.php?c=list").json()['meals']
             for i, cat in enumerate(categories):
                 print(i, cat.get("strCategory"))
             try:
-                cat_input = int(input("\nEnter your number selection here please chef: "))
+                cat_input = int(
+                    input("\nEnter your number selection here please chef: "))
             except (TypeError, ValueError, IndexError):
                 print("\nAfraid that is not an option chef")
                 continue
-            
-            options = requests.get(f"https://www.themealdb.com/api/json/v1/1/filter.php?c={categories[int(cat_input)].get('strCategory')}").json()['meals']
-            
+
+            options = requests.get(
+                f"https://www.themealdb.com/api/json/v1/1/filter.php?c={categories[int(cat_input)].get('strCategory')}").json()['meals']
+
             for i, option in enumerate(options):
                 print(i, option.get('strMeal'))
             try:
-                meal_choice = int(input("\nPlease tell me which number strikes your fancy chef: "))
+                meal_choice = int(
+                    input("\nPlease tell me which number strikes your fancy chef: "))
             except (TypeError, ValueError, IndexError):
                 print("\nAfraid that is not an option chef")
                 continue
 
-            single_meal = requests.get(f'https://www.themealdb.com/api/json/v1/1/search.php?s={options[meal_choice].get("strMeal")}').json()['meals'][0]
+            single_meal = requests.get(
+                f'https://www.themealdb.com/api/json/v1/1/search.php?s={options[meal_choice].get("strMeal")}').json()['meals'][0]
             meal_prep(meal_prep_single_format(single_meal))
-           
 
-        
         if cook_choice == 6:
-            with open("chef_text.txt", "w+") as f:
+            with open(file_path, "w+") as f:
                 f.write(str(week_meals))
             print("See you next time chef!")
             break
-        
+
+
 main()
