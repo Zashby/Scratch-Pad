@@ -36,6 +36,11 @@ export class BoardComponent implements OnInit {
     this.winner = this.calculateWinner();
   }
 
+  compMinMiax(dataArray: [], player: boolean){
+    // I may employ a recursive minmax algorithm to determine the best move for a computer player, but I may also be lazy about it and work in Java for a bit.
+    return 'nothing'
+  }
+
   calculateWinner() {
     const winningConditions = [
       [0, 1, 2],
@@ -60,8 +65,13 @@ export class BoardComponent implements OnInit {
 
 
     }
-    console.log('nowinner')
-    return null;
+    if (!this.squares.includes(null)){
+      return 'Nobody!' ;
+    }
+     return null;
+
   }
+
+
 
 }

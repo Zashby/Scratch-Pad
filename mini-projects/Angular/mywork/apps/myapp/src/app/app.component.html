@@ -1,2 +1,10 @@
-<router-outlet></router-outlet>
-<mywork-board></mywork-board>
+<nb-layout>
+  <nb-layout-header fixed></nb-layout-header>
+
+  <nb-layout-column>
+    <router-outlet></router-outlet>
+    <mywork-board></mywork-board>
+  </nb-layout-column>
+
+  <nb-layout-footer fixed> </nb-layout-footer>
+</nb-layout>

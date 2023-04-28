@@ -1,8 +1,12 @@
 <h1>Current Player: {{ player }}</h1>
 
-<button (click)="newGame()">Start a New Game</button>
+<button nbButton outline status="info" (click)="newGame()">
+  Start a New Game
+</button>
 
-<h2 *ngIf="winner">Player {{ winner }} won!</h2>
+<div>
+  <h2 *ngIf="winner">The winner: {{ winner }}</h2>
+</div>
 
 <main>
   <mywork-square
