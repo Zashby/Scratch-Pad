@@ -2,7 +2,7 @@
 
 import math
 
-# from string import ascii_lowercase, ascii_uppercase
+from string import ascii_lowercase, ascii_uppercase, ascii_letters
 
 
 # def is_year_leap(year):
@@ -422,3 +422,67 @@ import math
 
 # triangle = Triangle(Point(0, 0), Point(1, 0), Point(0, 1))
 # print(triangle.perimeter())
+
+
+# from string import ascii_letters, ascii_lowercase
+
+# countDict = {x: 0 for x in ascii_lowercase}
+
+# inputFile = input("Enter the file name: ")
+
+# openFile = open(f"{inputFile}.txt", "r")
+
+# for char in openFile.read():
+#     if char in ascii_letters:
+#         if char.lower() in countDict:
+#             countDict[char.lower()] += 1
+
+# openFile.close()
+
+# # Change sort order
+
+# sort_by_number = sorted(countDict.items(), key=lambda x: x[1], reverse=True)
+# dict_by_number = dict(sort_by_number)
+
+# for key, value in dict_by_number.items():
+#     if value != 0:
+#         print(f"{key} -> {value}")
+
+# writeFile = open(f"{inputFile}.hist", "w")
+# for key, value in dict_by_number.items():
+#     if value != 0:
+#         writeFile.write(f"{key} -> {value} \n")
+# writeFile.close()
+
+# class StudentsDataException(Exception):
+#     def __init__(self):
+#         Exception.__init__(self)
+
+
+# class BadLine(StudentsDataException):
+#     # Write your code here.
+#     pass
+
+# studentDict = {}
+# studentFile = input("Enter Student data file name: ")
+
+# try:
+#     openFile = open(f"{studentFile}.txt", "r")
+# except FileNotFoundError:
+#     print("No file with this name located")
+
+# for x in openFile.readlines():
+#     student = x.split()
+#     if len(student) != 3:
+#         raise BadLine
+#     name, grade = student[0] + " " + student[1], student[2]
+#     try:
+#         if name in studentDict.keys():
+#             studentDict[name] += float(grade)
+#         else:
+#             studentDict[name] = float(grade)
+#     except:
+#         studentDict[name] = "Corrupted"
+
+# for key, value in studentDict.items():
+#     print(f"{key:20s} {value:1}")

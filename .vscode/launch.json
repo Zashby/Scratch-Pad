@@ -3,6 +3,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "GameForm",
+            "request": "launch",
+            "mainClass": "tetris.GameForm",
+            "projectName": "private_3ddbe80c"
+        },
+        {
+            "type": "java",
+            "name": "Gamewindow",
+            "request": "launch",
+            "mainClass": "tetris.Gamewindow",
+            "projectName": "private_3ddbe80c"
+        },
+        {
+            "type": "java",
             "name": "Car",
             "request": "launch",
             "mainClass": "Car",
