@@ -4,6 +4,7 @@ import math
 
 from string import ascii_lowercase, ascii_uppercase, ascii_letters
 
+from calendar import Calendar
 
 # def is_year_leap(year):
 # #
@@ -486,3 +487,27 @@ from string import ascii_lowercase, ascii_uppercase, ascii_letters
 
 # for key, value in studentDict.items():
 #     print(f"{key:20s} {value:1}")
+
+# from calendar import Calendar
+
+
+# class MyCalendar(Calendar):
+
+#     def __init__(self):
+#         Calendar.__init__(self)
+
+#     def count_weekday_in_year(self, year, weekday):
+#         self.setfirstweekday(weekday)
+#         count = 0
+#         for month in range(1, 13):
+#             for data in self.monthdays2calendar(year, month):
+
+#                 if data[0][0] != 0:
+#                     count += 1
+
+#         return count
+
+
+# c = MyCalendar()
+
+# print(c.count_weekday_in_year(2000, 6))
