@@ -112,3 +112,45 @@ a {
 ul {
   color: transparent;
 }
+
+/* Old Navbar */
+/* ul.header {
+  display: inline;
+}
+
+ul.header > li {
+  float: center;
+}
+
+ul.header > li > a {
+  display: block;
+  background-color: green;
+  padding: 1rem;
+} */
+
+.navbar {
+  margin: 0 auto;
+  width: 50%;
+  overflow: hidden;
+  background-color: rgb(99, 180, 81);
+}
+
+.navbar a {
+  float: left;
+  text-align: center;
+  padding: 0.8rem 1rem;
+}
+
+.navbar a:hover {
+  background-color: blueviolet;
+  color: aqua;
+}
+
+.imagewrap {
+  display: flex;
+  justify-content: space-evenly;
+}
+.imagewrap img {
+  height: 500px;
+  width: 500px;
+}
