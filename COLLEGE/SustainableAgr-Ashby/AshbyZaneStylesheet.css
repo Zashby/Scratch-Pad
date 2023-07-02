@@ -154,3 +154,44 @@ ul.header > li > a {
   height: 500px;
   width: 500px;
 }
+
+.resourceTable {
+  background-color: antiquewhite;
+  width: 90%;
+  font-family: "Times New Roman", Times, serif;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  border: 1px double blueviolet;
+  border-collapse: collapse;
+}
+
+.resourceTable td {
+  padding: 10px;
+  border: 1px double black;
+  border-color: blueviolet;
+  border-collapse: collapse;
+  vertical-align: center;
+  text-align: center;
+}
+.resourceTable a {
+  display: flex;
+  justify-content: center;
+}
+
+.resourceTable th {
+  background-color: rgb(112, 214, 97);
+  padding: 5px;
+  border: 1px double black;
+  border-color: blueviolet;
+  border-collapse: collapse;
+  vertical-align: center;
+  text-align: left;
+}
+
+.resourceTable tr {
+  background-color: rgb(145, 207, 209);
+}
+
+.resourceTable tr:nth-child(odd) {
+  background-color: cadetblue;
+}
