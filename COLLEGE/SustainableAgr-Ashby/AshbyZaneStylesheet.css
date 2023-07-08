@@ -195,3 +195,18 @@ ul.header > li > a {
 .resourceTable tr:nth-child(odd) {
   background-color: cadetblue;
 }
+
+form.mailForm {
+  margin: 0 auto;
+  width: 20%;
+  text-align: center;
+  font-weight: 600;
+  background-color: rgb(99, 180, 81);
+  line-height: 150%;
+  padding: 1rem;
+}
+
+form.mailForm button {
+  width: 20em;
+  height: 2em;
+}
