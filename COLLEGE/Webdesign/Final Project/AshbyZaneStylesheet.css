@@ -1,0 +1,169 @@
+body {
+  /* Credit to GradientMagic.com */
+  background-image: linear-gradient(
+      45deg,
+      rgb(46, 46, 46) 0%,
+      rgb(46, 46, 46) 22%,
+      rgb(81, 81, 81) 22%,
+      rgb(81, 81, 81) 75%,
+      rgb(115, 115, 115) 75%,
+      rgb(115, 115, 115) 77%,
+      rgb(150, 150, 150) 77%,
+      rgb(150, 150, 150) 82%,
+      rgb(184, 184, 184) 82%,
+      rgb(184, 184, 184) 93%,
+      rgb(219, 219, 219) 93%,
+      rgb(219, 219, 219) 98%,
+      rgb(253, 253, 253) 98%,
+      rgb(253, 253, 253) 100%
+    ),
+    linear-gradient(
+      135deg,
+      rgb(46, 46, 46) 0%,
+      rgb(46, 46, 46) 22%,
+      rgb(81, 81, 81) 22%,
+      rgb(81, 81, 81) 75%,
+      rgb(115, 115, 115) 75%,
+      rgb(115, 115, 115) 77%,
+      rgb(150, 150, 150) 77%,
+      rgb(150, 150, 150) 82%,
+      rgb(184, 184, 184) 82%,
+      rgb(184, 184, 184) 93%,
+      rgb(219, 219, 219) 93%,
+      rgb(219, 219, 219) 98%,
+      rgb(253, 253, 253) 98%,
+      rgb(253, 253, 253) 100%
+    ),
+    linear-gradient(
+      22.5deg,
+      rgb(46, 46, 46) 0%,
+      rgb(46, 46, 46) 22%,
+      rgb(81, 81, 81) 22%,
+      rgb(81, 81, 81) 75%,
+      rgb(115, 115, 115) 75%,
+      rgb(115, 115, 115) 77%,
+      rgb(150, 150, 150) 77%,
+      rgb(150, 150, 150) 82%,
+      rgb(184, 184, 184) 82%,
+      rgb(184, 184, 184) 93%,
+      rgb(219, 219, 219) 93%,
+      rgb(219, 219, 219) 98%,
+      rgb(253, 253, 253) 98%,
+      rgb(253, 253, 253) 100%
+    ),
+    linear-gradient(
+      157.5deg,
+      rgb(46, 46, 46) 0%,
+      rgb(46, 46, 46) 22%,
+      rgb(81, 81, 81) 22%,
+      rgb(81, 81, 81) 75%,
+      rgb(115, 115, 115) 75%,
+      rgb(115, 115, 115) 77%,
+      rgb(150, 150, 150) 77%,
+      rgb(150, 150, 150) 82%,
+      rgb(184, 184, 184) 82%,
+      rgb(184, 184, 184) 93%,
+      rgb(219, 219, 219) 93%,
+      rgb(219, 219, 219) 98%,
+      rgb(253, 253, 253) 98%,
+      rgb(253, 253, 253) 100%
+    ),
+    linear-gradient(90deg, rgb(58, 58, 58), rgb(76, 76, 76));
+  background-blend-mode: overlay, overlay, overlay, overlay, normal;
+  height: 100vw;
+  width: 100vw;
+  color: #e0e1dd;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  margin: 0 auto;
+  width: 13%;
+  height: 2rem;
+  background-color: #415a77;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar a {
+  padding: 5px;
+  font-size: 1.2rem;
+  color: #a8dadc;
+  background-color: #1d3557;
+}
+
+.navbar a:hover {
+  background-color: #e63946;
+  color: #0077b6;
+}
+
+p {
+  margin: 0 auto;
+  width: 50%;
+  font-size: larger;
+}
+
+img {
+  max-height: 500px;
+  max-width: 80%;
+}
+
+table {
+  background-color: #1b263b;
+  width: 90%;
+  font-family: "Times New Roman", Times, serif;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  border: 1px double #e63946;
+  border-collapse: collapse;
+}
+
+table th {
+  background-color: #03045e;
+  padding: 5px;
+  border: 1px double black;
+  border-color: #e63946;
+  border-collapse: collapse;
+  vertical-align: center;
+  text-align: center;
+}
+
+table td {
+  height: 150px;
+  padding: 10px;
+  border: 1px double #669bbc;
+}
+
+.linkBox {
+  display: inline-flex;
+  vertical-align: center;
+  background-color: #1d3557;
+  padding: 10px;
+  width: 40%;
+}
+
+.linkBox a {
+  vertical-align: center;
+  margin: auto;
+  font-size: 1.5rem;
+  color: #a8dadc;
+  width: 50%;
+}
+
+.linkBox:hover {
+  background-color: #e63946;
+  color: #03045e;
+}
+
+.adviseForm {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.javaButton {
+  padding: 1.5rem;
+  font-size: larger;
+  font-weight: bold;
+  color: #e63946;
+}

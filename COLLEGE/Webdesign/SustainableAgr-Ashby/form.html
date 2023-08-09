@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farming Form</title>
+    <meta
+      name="Description"
+      content="Join our Farming Newsletter Distribution"
+    />
+    <meta
+      name="Keywords"
+      content="Farming, Soil, Agriculture, Horticulture, Sustainability"
+    />
+    <meta name="Author" content="Zane Ashby" />
+    <link rel="stylesheet" href="AshbyZaneStylesheet.css" type="Text/CSS" />
+    <style></style>
+  </head>
+
+  <body>
+    <div class="navbar">
+      <a href="SustainableAgr-Ashby.html">Home</a>
+      <a href="table.html">Table</a>
+      <a href="about.html">About</a>
+      <a href="form.html">Mailing</a>
+    </div>
+    <h1>Join our Mailing List</h1>
+    <form
+      method="post"
+      action="http://ss1.ciwcertified.com/cgi-bin/process.pl"
+      class="mailForm"
+    >
+      <!-- 
+            textbox
+            radio button
+            set of check boxes
+            multiple-option select list
+            text area
+            submit button
+            reset button
+        -->
+      <fieldset>
+        <label for="firstName">First name:</label><br />
+        <input type="text" name="firstName" id="firstName" />
+        <br /><label for="lastName">Last Name:</label>
+        <br />
+        <input type="text" name="lastName" id="lastName" />
+      </fieldset>
+      <fieldset>
+        How do you farm: <br />
+        <label for="hydroponics">hydroponics</label>
+        <input
+          type="radio"
+          name="farmType"
+          id="hydroponics"
+          value="hydroponics"
+        /><br />
+        <label for="gardening">gardening</label>
+        <input
+          type="radio"
+          name="farmType"
+          id="gardening"
+          value="gardening"
+        /><br />
+        <label for="greenhouse">greenhouse</label>
+        <input
+          type="radio"
+          name="farmType"
+          id="greenhouse"
+          value="greenhouse"
+        />
+      </fieldset>
+      <fieldset>
+        I would like to be informed regarding: <br />
+        <input type="checkbox" name="interest" value="growingAlerts" />Growing
+        Alerts<input type="checkbox" name="interest" value="deals" />Deals<input
+          type="checkbox"
+          name="interest"
+          value="events"
+        />Events
+      </fieldset>
+      <fieldset>
+        <label for="timeZone">Time zone:</label>
+        <select name="timeZone" id="timeZone">
+          <option value="eastern">Eastern</option>
+          <option value="central">Central</option>
+          <option value="mountain">Mountain</option>
+          <option value="pacific">Pacific</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Feel free to input a comment</legend>
+        <textarea
+          name="comments"
+          cols="30"
+          rows="10"
+          placeholder="Please feel free to leave comments here"
+        ></textarea>
+      </fieldset>
+      <fieldset>
+        <legend>Submit your form or reset</legend>
+        <input type="submit" value="submit" />
+        <input type="reset" value="Reset" />
+      </fieldset>
+    </form>
+  </body>
+</html>

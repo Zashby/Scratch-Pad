@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Software Engineering: Additional Resources</title>
+    <meta
+      name="Description"
+      content="Additional resources for learning about programming"
+    />
+    <meta name="Keywords" content="Software, Programming, Career" />
+    <meta name="Author" content="Zane Ashby" />
+    <link rel="stylesheet" href="AshbyZaneStylesheet.css" type="Text/CSS" />
+    <script src="randomDev.js"></script>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="AshbyZaneHomepage.html">Home</a>
+      <a href="AshbyZanePaths.html">Paths</a>
+      <a href="AshbyZaneAdditional.html">Additional</a>
+    </div>
+    <h1>Additional Resources</h1>
+
+    <img
+      src="confusedDev.jpg"
+      alt="Credit to Istock; A confused Developer, just like all of us"
+    />
+    <br /><br />
+    <p>
+      Sometimes it can seem difficult to figure out where to go to learn about
+      such a complex and broad topic as programming. Just like music, there are
+      many styles to learn and while it is easy to just make noise it can be
+      difficult to make a song. None of these resources will do the coding for
+      you, but they will help give you the tools necessary to move forward in
+      your programming journey.
+    </p>
+    <br />
+    <div class="linkBox">
+      <a href="https://www.w3schools.com/">w3schools</a>
+      <p>
+        A resource with basic tutorials on multiple modern programming languages
+      </p>
+    </div>
+    <br />
+    <div class="linkBox">
+      <a href="https://www.codewars.com/">Codewars</a>
+      <p>
+        Practice your coding skills with daily challenges in a variety of
+        languages
+      </p>
+    </div>
+    <br />
+    <div class="linkBox">
+      <a href="https://www.freecodecamp.org/">FreeCodeCamp</a>
+      <p>
+        Programming language platform focused on web development, backend
+        management, and data science applications
+      </p>
+    </div>
+    <br />
+    <div class="linkBox">
+      <a href="https://www.edx.org/course/statistical-learning"
+        >EdX Statistcal Learning with R</a
+      >
+      <p>
+        A Stanford University level college class explaining statistical
+        modeling and its application in the R language
+      </p>
+    </div>
+    <br /><br />
+    <p>
+      Want more assistance with finding resources to help you learn? Input your
+      information here and we will reach out to you for advisement.
+    </p>
+    <br />
+    <form
+      method="post"
+      action="http://ss1.ciwcertified.com/cgi-bin/process.pl"
+      class="adviseForm"
+    >
+      <fieldset>
+        <label for="firstName">First name:</label><br />
+        <input type="text" name="firstName" id="firstName" />
+        <br /><label for="lastName">Last Name:</label>
+        <br />
+        <input type="text" name="lastName" id="lastName" />
+        <br /><label for="emailAddress">E-mail</label><br />
+        <input type="email" name="emailAddress" id="emailAddress" />
+      </fieldset>
+      <fieldset>
+        Interested in <br />
+        <label for="dataScience">Data Science</label>
+        <input
+          type="radio"
+          name="learningPath"
+          id="dataScience"
+          value="dataScience"
+        /><br />
+        <label for="gameDev">Game Development</label>
+        <input
+          type="radio"
+          name="learningPath"
+          id="gameDev"
+          value="gameDev"
+        /><br />
+        <label for="webDev">Web Development</label>
+        <input type="radio" name="learningPath" id="webDev" value="webDev" />
+        <br />
+        <label for="mobileDev">Mobile Development</label>
+        <input
+          type="radio"
+          name="learningPath"
+          id="mobileDev"
+          value="mobileDev"
+        />
+        <br />
+        <label for="systemEng">System Engineer</label>
+        <input
+          type="radio"
+          name="learningPath"
+          id="systemEng"
+          value="systemEng"
+        />
+      </fieldset>
+      <fieldset>
+        Status: <br />
+        <input type="checkbox" name="educationStat" value="SelfTaught" />Self
+        Taught
+        <input
+          type="checkbox"
+          name="educationStat"
+          value="collegeDegree"
+        />College Degree
+        <input
+          type="checkbox"
+          name="educationStat"
+          value="bootCamp"
+        />Bootcamp<input
+          type="checkbox"
+          name="educationStat"
+          value="veteran"
+        />Veteran
+      </fieldset>
+      <fieldset>
+        <label for="timeZone">Time zone:</label>
+        <select name="timeZone" id="timeZone">
+          <option value="eastern">Eastern</option>
+          <option value="central">Central</option>
+          <option value="mountain">Mountain</option>
+          <option value="pacific">Pacific</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>
+          Feel free to input information outside of the scope of this survey
+        </legend>
+        <textarea
+          name="comments"
+          cols="30"
+          rows="10"
+          placeholder="Please feel free to share additional information or a best contact time here"
+        ></textarea>
+      </fieldset>
+      <fieldset>
+        <legend>Submit your form or reset</legend>
+        <input type="submit" value="submit" />
+        <input type="reset" value="Reset" />
+      </fieldset>
+    </form>
+
+    <br />
+    <h3>Still cannot decide where to begin?</h3>
+
+    <h5>How about we just leave it to chance and see how it goes?</h5>
+
+    <button type="button" class="javaButton" onclick="getRandom(this)">
+      Oh boy! Here we go!
+    </button>
+  </body>
+</html>
