@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 2</title>
+    <link rel="stylesheet" href="Assignment2.css" type="text/css" />
+  </head>
+  <body>
+    <h1>Zane Ashby</h1>
+    <hr />
+
+    <div class="answerBox">
+      <script>
+        let userName;
+        userName = prompt("What is your user name?");
+        if (userName) {
+          document.write("<p>" + userName + "</p>");
+        }
+
+        function beginQuiz() {
+          let correctAnswers = 0;
+          let guess = prompt(
+            "Q. Which data type allows a sequence of alphanumeric characters written in quotes (either single or double quotes)?"
+          );
+          if (guess == "string") {
+            correctAnswers++;
+          }
+          guess = prompt(
+            "Q. Using Javascript operator precedence, what is the result of the following expression? 3 + 3 * 5"
+          );
+          if (guess == "18") {
+            correctAnswers++;
+          }
+
+          guess = prompt(
+            "Q. Which data type allows a sequence of alphanumeric characters written in quotes (either single or double quotes)?"
+          );
+          if (guess == "false") {
+            correctAnswers++;
+          }
+          console.log(correctAnswers);
+          const node = document.createElement("p");
+          const textNode = document.createTextNode(
+            "You got " + correctAnswers + " answers correct!"
+          );
+          node.appendChild(textNode);
+          document.querySelector(".answerBox").appendChild(node);
+        }
+      </script>
+      <button onclick="beginQuiz()">Begin Quiz!</button>
+    </div>
+  </body>
+</html>

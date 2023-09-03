@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 4</title>
+    <link rel="stylesheet" href="Assignment4.css" type="text/css" />
+  </head>
+  <body>
+    <h1>Zane Ashby</h1>
+    <hr />
+
+    <div class="answerBox">
+      <script>
+        const dt = new Date();
+        const days = [
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ];
+        const months = [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ];
+
+        let dateNum = dt.getDate().toString();
+        let dateSlice = dateNum.slice(-1);
+        console.log(dateSlice);
+        let addit = "";
+        switch (dateSlice) {
+          case "1":
+            addit = "st";
+            break;
+          case "2":
+            addit = "nd";
+            break;
+          case "3":
+            addit = "rd";
+            break;
+          default:
+            addit = "th";
+        }
+
+        document.write(
+          "Today is " +
+            days[dt.getDay()] +
+            ", the " +
+            dt.getDate() +
+            addit +
+            " day of " +
+            months[dt.getMonth()] +
+            " in the year of " +
+            dt.getFullYear() +
+            ".</br>"
+        );
+
+        const fruitArray = [
+          "strawberry",
+          "kiwi",
+          "pineapple",
+          "blackberry",
+          "orange",
+        ];
+
+        fruitArray.sort();
+
+        for (let i = 0; i < fruitArray.length; i++) {
+          document.write(fruitArray[i] + "</br>");
+        }
+      </script>
+    </div>
+  </body>
+</html>
