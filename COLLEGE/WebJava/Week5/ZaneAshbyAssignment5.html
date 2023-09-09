@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 5</title>
+    <link rel="stylesheet" href="Assignment5.css" type="text/css" />
+  </head>
+  <body>
+    <h1>Zane Ashby</h1>
+    <hr />
+
+    <div class="answerBox"></div>
+
+    <h1>A Nice Flower Show</h1>
+    <script>
+      let currentSlide = 0;
+      let slideArray = [
+        "aster",
+        "birdOfParadise",
+        "echinacea",
+        "lily",
+        "orchid",
+      ];
+
+      function nextSlide(image) {
+        currentSlide = (currentSlide + 1) % slideArray.length;
+
+        //  Tests for cycling through
+        // console.log(`${slideArray[currentSlide]}.jpg`);
+        // console.log(currentSlide);
+
+        imgSelector = document.querySelector(".slideDeck");
+        imgSelector.src = `${slideArray[currentSlide]}.jpg`;
+      }
+    </script>
+    <img src="aster.jpg" class="slideDeck" onclick="nextSlide()" alt="Slideshow of beautiful flowers"/>
+  </body>
+</html>

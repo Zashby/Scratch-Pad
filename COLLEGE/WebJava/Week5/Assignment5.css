@@ -1,0 +1,26 @@
+body {
+  background-color: #f2e6ff;
+  align-content: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+.answerBox {
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.slideDeck {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.slideDeck:hover {
+  cursor: pointer;
+}
