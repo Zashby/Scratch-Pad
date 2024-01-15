@@ -1,0 +1,14 @@
+body {
+  background-color: #d5f5e3;
+}
+
+h1 {
+  text-align: center;
+}
+
+.answerBox {
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.5rem;
+}

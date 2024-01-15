@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 6</title>
+    <link rel="stylesheet" href="Assignment6.css" type="text/css" />
+    <script>
+      function checkForm(form) {
+        var emailPattern = /^[a-zA-Z0-9._-]+@apus\.edu$/;
+
+        switch (true) {
+          case form.elements["firstName"].value === "":
+            alert("Please enter a first name");
+            return false;
+            break;
+          case form.elements["lastName"].value === "":
+            alert("Please enter a last name");
+            return false;
+            break;
+          case !emailPattern.test(form.elements["emailAddress"].value):
+            alert("Please enter a valid @apus.edu email address");
+            return false;
+            break;
+          default:
+            return true;
+            break;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Zane Ashby</h1>
+    <hr />
+    <div class="formBox">
+      <form class="adviseForm">
+        <fieldset class="formField">
+          <label for="firstName">First name:</label><br />
+          <input type="text" name="firstName" id="firstName" />
+          <br /><label for="lastName">Last Name:</label>
+          <br />
+          <input type="text" name="lastName" id="lastName" />
+          <br /><label for="emailAddress">College E-mail</label><br />
+          <input
+            type="email"
+            name="emailAddress"
+            id="emailAddress"
+            placeholder="@apus.edu"
+          />
+        </fieldset>
+
+        <fieldset class="formField">
+          <label for="favSubject">Favorite Subject:</label>
+          <select name="favSubject" id="favSubject">
+            <option value="math">Math</option>
+            <option value="history">History</option>
+            <option value="biology">Biology</option>
+            <option value="music">Music</option>
+            <option value="Chemistry">Chemistry</option>
+          </select>
+        </fieldset>
+
+        <fieldset>
+          <legend>Submit your form or reset</legend>
+          <input
+            type="submit"
+            value="submit"
+            onclick="return checkForm(this.form)"
+          />
+          <input type="reset" value="Reset" />
+        </fieldset>
+      </form>
+    </div>
+    <div class="answerBox"></div>
+  </body>
+</html>

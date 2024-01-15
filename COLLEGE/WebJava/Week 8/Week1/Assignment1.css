@@ -1,0 +1,14 @@
+body {
+  background-color: #aed6f1;
+}
+
+h1 {
+  text-align: center;
+}
+
+.dataBox {
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.5rem;
+}

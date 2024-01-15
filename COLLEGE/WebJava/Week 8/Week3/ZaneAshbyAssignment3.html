@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 3</title>
+    <link rel="stylesheet" href="Assignment3.css" type="text/css" />
+  </head>
+  <body>
+    <a
+      style="
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        border: solid black 2px;
+        width: 80px;
+        background-color: cadetblue;
+        font-weight: bold;
+        color: violet;
+      "
+      onmouseover="this.style.backgroundColor='red'"
+      onmouseout="this.style.backgroundColor='cadetblue'"
+      href="../ZaneAshbyAssignment8.html"
+      >Home</a
+    >
+    <h1>Zane Ashby</h1>
+    <hr />
+
+    <div class="answerBox">
+      <script>
+        // I wanted to follow the instructions, but am very well aware I could just test for if i %5 ==0 then write document, removing the need for the continue statement.
+        for (i = 1; i <= 75; i++) {
+          if (i % 5 != 0) {
+            continue;
+          } else {
+            document.write(i + "<br>");
+          }
+        }
+
+        function openWindow() {
+          window.open(
+            "https://www.upskilled.edu.au/skillstalk/software-development-trends"
+          );
+        }
+      </script>
+      <button onclick="openWindow()">Open New Window</button>
+    </div>
+  </body>
+</html>
