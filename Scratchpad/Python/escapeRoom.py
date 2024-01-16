@@ -8,8 +8,7 @@ class GameObject:
         self.feel = feel
         self.smell = smell
 
-    def __str__(self):
-        pass
+
 
     def look(self):
         return f"You look at the {self.name}. {self.appearance}\n"
@@ -42,12 +41,13 @@ class Room:
 
 class EscapeRoom:
 
-    def __init__(self, room, attempts):
-        self.room = Room(111, [])
-        objects = self.create_objects
+    def __init__(self, attempts):
+        
+        objects = self.create_objects()
+        self.room = Room(111, objects)
         self.attempts = attempts
 
-    def create_objects():
+    def create_objects(self):
         return [GameObject(
             "Sweater",
             "It's a blue sweater that had the number 12 switched on it.",
@@ -73,3 +73,44 @@ class EscapeRoom:
             "The hour hand is pointing towards the soup, the minute hand towards the chair, and the second hand towards the sweater.",
             "The battery compartment is open and empty.",
             "It smells of plastic.")]
+
+    def take_turn(self):
+        prompt = self.get_room_prompt()
+        selection = int(input(prompt))
+        if selection in range(1,6):
+            self.select_object(selection-1)
+            self.take_turn()
+    
+    def get_room_prompt(self):
+        prompt= "Enter the three digit code or choose an item to inspect:\n"
+        names=self.room.get_game_object_names()
+        for i, name in enumerate(names):
+            prompt += f"{i+1}. {name}\n"
+        return prompt
+    
+    def select_object(self, index):
+        selected_object = self.room.game_objects[index]
+        prompt = self.get_object_interaction_string(selected_object.name)
+        interaction = input(prompt)
+        print(self.interact_with_object(selected_object, interaction))
+        return
+    
+    def get_object_interaction_string(self, name):
+        
+        return f"How would you like to inspect the {name}?\n1. Look\n2. Touch\n3. Smell\n"
+    
+    def interact_with_object(self, object, interaction):
+        match interaction:
+            case "1":
+                return object.look()
+            case "2":
+                return object.touch()
+            case "3":
+                return object.sniff()
+            case _:
+                return "This is not an option."
+                
+    
+    
+game = EscapeRoom(0)
+game.take_turn()
